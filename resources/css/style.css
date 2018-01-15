@@ -5,9 +5,13 @@ body {
 }
 
 .logo {
-	height: 100px;
-	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 50%;
 }
+
 
 .content {
 	margin-top: 15px;
@@ -68,7 +72,7 @@ input[type=text], select {
 
 button[type=submit] {
 	width: 100%;
-	background-color: #b30000;
+	background-color: #0079BB;
 	color: white;
 	padding: 14px 20px;
 	margin: 8px 0;
