@@ -2,30 +2,67 @@
 <html>
 <head>
  <meta charset="utf-8">
- <script type="text/javascript">
- $.ajax({
- type: "GET",
- url: "https://api.bring.com/shippingguide/api",
- cache: false,
- data: dataString,
+ <script type="text/javascript" language="javascript">
 
- success: function(html){
- //$("#more").after(html);
- alert("Success!");
+ //window.onload = loadDoc();
+ function loadDoc() {
+
+     /*var xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+       if (this.readyState == 4 && this.status == 200) {
+         document.getElementById("demo").innerHTML = this.responseText;
+         alert(this.responseText);
+       }
+     };
+     xhttp.open("GET", "https://api.bring.com/shippingguide/api/postalCode.html?clientUrl=localhost/postnummer/ajax2.html&pnr="+test , true);
+
+     xhttp.send();
+     alert(xhttp.responseText);
+     xhttp.open("GET", "https://api.bring.com/shippingguide/api/postalCode.html?clientUrl=localhost/postnummer/ajax2.html&pnr="+test, false);
+     xhttp.send();
+     document.getElementById("demo").innerHTML = xhttp.responseText;
+     alert(xhttp.responseText);*/
+
+     var test = document.getElementById("pnr").value;
+     //alert(test);
+ var url = "https://api.bring.com/shippingguide/api/postalCode.html?clientUrl=localhost/postnummer/ajax2.html&pnr=";
+ var x = url + test;
+ //alert(x);
+
+
+   var xmlhttp = new XMLHttpRequest();
+
+   xmlhttp.onreadystatechange = function() {
+       if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+          if (xmlhttp.status == 200) {
+              document.getElementById("poststed").innerHTML = xmlhttp.responseText;
+
+          }
+          else if (xmlhttp.status == 400) {
+               alert('There was an error 400');
+          }
+          else {
+              alert('something else other than 200 was returned');
+          }
+       }
+   };
+
+   xmlhttp.open("GET", x, true);
+
+   xmlhttp.send();
+
+
+   //windows.stop();
+
+   window.onbeforeunload = function() {
+      return "Leaving?";
+  }
+   //location.reload();
+     //  alert(x);*/
+
+
  }
- });
-
- $.getJSON('http://www.imdbapi.com/?' + dataString, function(json_data){
- alert(JSON.stringify(json_data));
- });
-
-
- {
-   "result": "SANDVIKA",
-   "valid": true,
-   "postalCodeType": "NORMAL"
- }
-</script>
+ </script>
 
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
 <meta charset="ISO-8859-1">
@@ -40,9 +77,17 @@
 	<div class="content">
     <div class="form">
 			<fieldset>
-				<legend>Registreringsskjema</legend>
+				<legend>Personalia</legend>
 				    <form method="post" action="" id="formToSave">
 
+
+
+              <label class="control-label" for="selectbasic">Kjønn</label>
+                     <select id="selectgender" name="gender" class="form-control" required>
+                      <option value="mann">Mann</option>
+                      <option value="kvinne">Kvinne</option>
+                      <option value="annet">Annet</option>
+                    </select>
 
             				  <!--<form action="submit.php" method="post" data-toggle="validator"> -->
                       					<label for="form-fornavn">Fornavn</label>
@@ -61,17 +106,13 @@
                       					<input type="text" pattern="^[a-zA-ZÆØÅæøå0-9 ]+$" class="form-control" name="adresse" placeholder="Adresse" required="true" autocomplete="off">
                       					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
-
-
                       					<label for="form-postnummer">Postnummer</label>
-                      					<input type="text" pattern="^[0-9]{4}$" class="form-control" name="postnummer" placeholder="Postnummer" required="true" maxlength="4" autocomplete="off">
+                      					<input type="text" pattern="^[0-9]{4}$" class="form-control" name="pnr" id="pnr" placeholder="Postnummer" required="true" maxlength="4" autocomplete="off">
                       					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
-                                <form method="get" action="https://api.bring.com/shippingguide/api" id="postalcodeform">
                       					<label for="form-poststed">Poststed</label>
-                      					<input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="poststed" placeholder="Poststed" required="true" autocomplete="off">
+                      					<input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="poststed" id="poststed" placeholder="Poststed" required="true" autocomplete="off">
                       					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                                //<span id="bringPostnumberQueryResult" class="bringPostnumberQueryValidPostnumber bringPostalCodeTypeNORMAL">SANDVIKA</span>
 
                       					<label for="form-kommune">Kommune</label>
                       					<input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="kommune" placeholder="Kommune" required="true" autocomplete="off">
@@ -86,12 +127,13 @@
                                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
                                 <label for="form-bankkonto">Bankkontonummer</label>
-                                <input type="number" pattern="^[0-9]{11}$" class="form-control" name="bankkontonummer" placeholder="Bankkontonummer" maxlength="11" required="true" autocomplete="off">
+                                <input type="text" pattern="^[0-9]{11}$" class="form-control" name="bankkontonummer" placeholder="Bankkontonummer" maxlength="11" required="true" autocomplete="off">
                                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
 
                                 <label for="control-label">Statsborgerskap</label>
                                 <select id="selectbasic" name="statsborgerskap" class="form-control" required>
+
                             	<option value="AF">Afghanistan</option>
                             	<option value="AX">Åland Islands</option>
                             	<option value="AL">Albania</option>
@@ -362,7 +404,7 @@
                       				  <input type="text" pattern="^[0-9\-\+]{8,15}$" class="form-control" name="nok-telefon" placeholder="Pårørendes telefonnummer" required="true" autocomplete="off">
                       				  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
-                                <div class="form-group">
+                              <div class="form-group">
                                 <label class="control-label" for="radios">Er Canon biarbeidsgiver?</label>
                                 <div class="radio">
                                     <label>
@@ -373,6 +415,105 @@
                                       <input type="radio" name="biarbeidsgiver" value="nei" required>Nei</label>
                                   </div>
                                 </div>
+
+                                <legend>Tilleggsopplysninger</legend>
+
+
+                                <label class="control-label" for="selectbasic">Skostørrelse</label>
+                      				         <select id="selectbasic" name="sko" class="form-control" required>
+                              				  <option value="34">34</option>
+                              				  <option value="35">35</option>
+                              				  <option value="36">36</option>
+                              				  <option value="37">37</option>
+                              				  <option value="38">38</option>
+                              				  <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                      				        </select>
+
+                                      <label class="control-label" for="selectbasic">T-skjorte</label>
+                            				         <select id="selectbasic" name="tskjorte" class="form-control" required>
+                                    				  <option value="xs">XS</option>
+                                    				  <option value="s">S</option>
+                                    				  <option value="m">M</option>
+                                    				  <option value="l">L</option>
+                                    				  <option value="xl">XL</option>
+                                    				  <option value="xxl">XXL</option>
+                            				        </select>
+
+                                            <label class="control-label" for="selectbasic">Genser</label>
+                                                   <select id="selectbasic" name="genser" class="form-control" required>
+                                                    <option value="xs">XS</option>
+                                                    <option value="s">S</option>
+                                                    <option value="m">M</option>
+                                                    <option value="l">L</option>
+                                                    <option value="xl">XL</option>
+                                                    <option value="xxl">XXL</option>
+                                                  </select>
+
+                                                  <label class="control-label" for="selectbasic">Jakke</label>
+                                                         <select id="selectbasic" name="jakke" class="form-control" required>
+                                                          <option value="xs">XS</option>
+                                                          <option value="s">S</option>
+                                                          <option value="m">M</option>
+                                                          <option value="l">L</option>
+                                                          <option value="xl">XL</option>
+                                                          <option value="xxl">XXL</option>
+                                                        </select>
+                                                        <label class="control-label" for="selectbasic">Bukse</label>
+                                                               <select id="selectbasic" name="bukse" class="form-control" required>
+                                                                <option value="xs">XS</option>
+                                                                <option value="s">S</option>
+                                                                <option value="m">M</option>
+                                                                <option value="l">L</option>
+                                                                <option value="xl">XL</option>
+                                                                <option value="xxl">XXL</option>
+                                                              </select>
+
+
+
+                                <div class="form-group">
+                                  <label class="control-label" for="radios">Disponerer du bil?</label>
+                                  <div class="radio">
+                                      <label>
+                                        <input type="radio" name="firmabil" value="ja" required>Ja</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="firmalbil" value="nei" required>Nei</label>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label class="control-label" for="radios">Har du mobilabonnement?</label>
+                                    <div class="radio">
+                                        <label>
+                                          <input type="radio" name="mobilabo" value="ja" required>Ja</label>
+                                      </div>
+                                      <div class="radio">
+                                        <label>
+                                          <input type="radio" name="mobilabo" value="nei" required>Nei</label>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label class="control-label" for="radios">Hvilken type datamaskin bruker du?</label>
+                                      <div class="radio">
+                                          <label>
+                                            <input type="radio" name="pc" value="pc" required>PC</label>
+                                        </div>
+                                        <div class="radio">
+                                          <label>
+                                            <input type="radio" name="pc" value="mac" required>Mac</label>
+                                        </div>
+                                      </div>
 
 
                              <button id="submitForm" name="submit" type="submit" value="submit"> Registrer
