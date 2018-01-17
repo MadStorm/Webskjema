@@ -3,6 +3,41 @@
 <head>
  <meta charset="utf-8">
  <script type="text/javascript" language="javascript">
+ /*$(function() {
+     var createAllErrors = function() {
+         var form = $(this);
+         var errorList = $('formToSave', form);
+
+         var showAllErrorMessages = function() {
+             errorList.empty();
+
+             //Find all invalid fields within the form.
+             form.find(':invalid').each(function(index, node) {
+
+                 //Find the field's corresponding label
+                 var label = $('label[for=' + node.id + ']');
+
+                 //Opera incorrectly does not fill the validationMessage property.
+                 var message = node.validationMessage || 'Invalid value.';
+                 errorList
+                     .show()
+                     .append('<li><span>' + label.html() + '</span> ' + message + '</li>');
+             });
+         };
+
+         $('input[type=submit], button', form).on('click', showAllErrorMessages);
+         $('input[type=text]', form).on('keypress', function(event) {
+             //keyCode 13 is Enter
+             if (event.keyCode == 13) {
+                 showAllErrorMessages();
+             }
+         });
+     };
+
+     $('form').each(createAllErrors);
+ });*/
+
+
 
  //window.onload = loadDoc();
  function loadDoc() {
@@ -64,6 +99,8 @@
  }
  </script>
 
+<!-- <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+-->
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
 <meta charset="ISO-8859-1">
 <title>Registreringsskjema</title>
@@ -405,16 +442,19 @@
                       				  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
                               <div class="form-group-biarbeidsgiver">
-                                <label class="control-label" for="radios">Er Canon biarbeidsgiver?</label>
-                                <div class="radio">
-                                    <label>
-                                      <input type="radio" name="biarbeidsgiver" value="ja" required>Ja</label>
-                                  </div>
-                                  <div class="radio">
-                                    <label>
-                                      <input type="radio" name="biarbeidsgiver" value="nei" required>Nei</label>
-                                  </div>
-                                </div>
+                                    <label class="control-label" for="radios">Er Canon biarbeidsgiver?</label>
+                                      <div class="radio">
+                                        <label>
+                                          <input type="radio" name="biarbeidsgiver" value="ja" required>Ja</label>
+                                      </div>
+                                        <div class="radio">
+                                          <label>
+                                            <input type="radio" name="biarbeidsgiver" value="nei" required>Nei</label>
+                                        </div>
+                              </div>
+                              </fieldset>
+                              <fieldset>
+
 
                                 <legend>Tilleggsopplysninger</legend>
 
@@ -482,12 +522,12 @@
                                 <div class="form-group">
                                       <label class="control-label" for="radios">Disponerer du bil?</label>
                                       <div class="radio">
-                                      <label>
+                                        <label>
                                         <input type="radio" name="firmabil" value="ja" required>Ja</label>
-                                </div>
+                                      </div>
                                       <div class="radio">
                                           <label>
-                                          <input type="radio" name="firmalbil" value="nei" required>Nei</label>
+                                          <input type="radio" name="firmabil" value="nei" required>Nei</label>
                                       </div>
                                 </div>
 

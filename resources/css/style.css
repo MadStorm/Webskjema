@@ -2,11 +2,31 @@ body {
 	background-color: #FFFFFF;
 	padding-left: 10px;
 	padding-right: 10px;
-	min-width: 200px;
+	max-width: 1000px;
 }
 
 div.logo{
 	padding-top: 10px;
+}
+
+div{
+	margin-top: 10px;
+}
+
+.form-group-biarbeidsgiver{
+	margin:0;
+	padding-bottom: 20px;
+}
+
+.form-group{
+	margin: 0;
+	padding-top: 0;
+	padding-bottom: 20px;
+
+}
+.radio{
+	margin: 0;
+	padding: 0;
 }
 
 img{
@@ -27,7 +47,39 @@ img{
 	max-width: 800px;
 }
 
+.c-error .c-validation{
+  background: #c51244 !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  position: relative;
+  display: inline-block !important;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin-top: 10px;
+}
+
+.c-label:after{
+  color: #c51244 !important;
+}
+
+.c-error input, .c-error select, .c-error .c-choice-option{
+  background: #fff0f4;
+  color: #c51244;
+}
+
+.c-validation:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #c51244;
+  position: absolute;
+  top: -10px;
+}
+
+
 legend {
+	color: #016FBA;
 	text-align: center;
 	font-size: 24px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -35,12 +87,46 @@ legend {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 	padding-top: 20px;
+	border-bottom: 1px solid #016FBA;
+	width: 80%;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 
+
+/* style all input elements with a required attribute */
+/*
+input:required {
+/*  box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85); */
+
+
+/**
+ * style input elements that have a required
+ * attribute and a focus state
+ */
+ /*
+input:required:invalid {
+  border: 1px solid red;
+  outline: none;
+}*/
+
+/**
+ * style input elements that have a required
+ * attribute and a hover state
+ */
+ /*
+input:required:hover {
+  opacity: 1;
+}*/
+
+
 fieldset {
-	border: 0;
+	border: none;
+	margin: 0;
 }
 
 label {
@@ -52,11 +138,18 @@ label {
 	line-height: 20px;
 }
 
+.has-error .form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
 .form {
 	border-radius: 5px;
 	background-color: #f2f2f2;
 	padding: 20px;
 	max-width: 800px;
+	min-width: 200px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -112,7 +205,7 @@ input[type=number], select {
 
 button[type=submit] {
 	width: 100%;
-	background-color: #0079BB;
+	background-color: #016FBA;
 	color: white;
 	padding: 14px 20px;
 	margin: 15px 0;
