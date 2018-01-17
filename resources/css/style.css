@@ -3,6 +3,9 @@ body {
 	padding-left: 10px;
 	padding-right: 10px;
 	max-width: 1000px;
+	min-width: 200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 div.logo{
@@ -10,7 +13,7 @@ div.logo{
 }
 
 div{
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 }
 
 .form-group-biarbeidsgiver{
@@ -29,7 +32,22 @@ div{
 	padding: 0;
 }
 
-img{
+img#personalialogo{
+/* Old
+	width: 50px;
+	height: 50px;
+	float: right;
+	position: relative;
+	right: -8px;*/
+
+width: 50px;
+height: 50px;
+float: right;
+position: relative;
+left: 5px;
+}
+
+img#logo{
 	width: 300px;
 	display: block;
 	margin-left: auto;
@@ -37,7 +55,7 @@ img{
 }
 
 .content {
-	margin-top: 15px;
+	/*margin-top: 15px;*/
 }
 
 .contacts {
@@ -78,22 +96,31 @@ img{
 }
 
 
-legend {
+hr{
+display: block;
+height: 1px;
+border: 0;
+border-top: 2px solid black;
+margin: 1em 0;
+padding: 0;
+}
+
+legend#test {
 	color: #016FBA;
-	text-align: center;
-	font-size: 24px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
-	padding-bottom: 10px;
-	padding-top: 20px;
-	border-bottom: 1px solid black;
-	width: 100%;
-	margin-bottom: 20px;
-	margin-left: auto;
-	margin-right: auto;
+	    text-align: center;
+	    font-size: 24px;
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: 500;
+	    line-height: 26.4px;
+	    /* padding-bottom: 10px; */
+	    padding-top: 20px;
+	    /* border-bottom: 1px solid black; */
+	    width: 100px;
+	    /* margin-bottom: 20px; */
+	    margin-left: auto;
+	    margin-right: auto;
 
 }
 
@@ -147,7 +174,10 @@ label {
 .form {
 	border-radius: 5px;
 	background-color: white; /*#f2f2f2;*/
-	padding: 20px;
+	/*padding: 20px;*/
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom:20px;
 	max-width: 800px;
 	min-width: 200px;
 	margin-left: auto;
