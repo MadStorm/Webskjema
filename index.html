@@ -2,6 +2,30 @@
 <html>
 <head>
  <meta charset="utf-8">
+ <script type="text/javascript">
+ $.ajax({
+ type: "GET",
+ url: "https://api.bring.com/shippingguide/api",
+ cache: false,
+ data: dataString,
+
+ success: function(html){
+ //$("#more").after(html);
+ alert("Success!");
+ }
+ });
+
+ $.getJSON('http://www.imdbapi.com/?' + dataString, function(json_data){
+ alert(JSON.stringify(json_data));
+ });
+
+
+ {
+   "result": "SANDVIKA",
+   "valid": true,
+   "postalCodeType": "NORMAL"
+ }
+</script>
 
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
 <meta charset="ISO-8859-1">
@@ -37,13 +61,17 @@
                       					<input type="text" pattern="^[a-zA-ZÆØÅæøå0-9 ]+$" class="form-control" name="adresse" placeholder="Adresse" required="true" autocomplete="off">
                       					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
+
+
                       					<label for="form-postnummer">Postnummer</label>
                       					<input type="text" pattern="^[0-9]{4}$" class="form-control" name="postnummer" placeholder="Postnummer" required="true" maxlength="4" autocomplete="off">
                       					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
+                                <form method="get" action="https://api.bring.com/shippingguide/api" id="postalcodeform">
                       					<label for="form-poststed">Poststed</label>
                       					<input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="poststed" placeholder="Poststed" required="true" autocomplete="off">
                       					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                //<span id="bringPostnumberQueryResult" class="bringPostnumberQueryValidPostnumber bringPostalCodeTypeNORMAL">SANDVIKA</span>
 
                       					<label for="form-kommune">Kommune</label>
                       					<input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="kommune" placeholder="Kommune" required="true" autocomplete="off">
