@@ -1,162 +1,263 @@
 body {
-	background-color: #FFFFFF;
-	padding-left: 10px;
-	padding-right: 10px;
-	max-width: 1000px;
-	min-width: 200px;
-	margin-left: auto;
-	margin-right: auto;
+  background-color: #FFFFFF;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 1000px;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-div.logo{
-	padding-top: 10px;
+.content {
+  /*margin-top: 15px;*/
+}
+
+/*===================================*/
+/*Div*/
+/*===================================*/
+
+div.logo {
+  padding-top: 10px;
+}
+
+div {
+  /*margin-top: 10px;*/
+}
+
+/*===================================*/
+/*Form*/
+/*===================================*/
+
+.form {
+  border-radius: 5px;
+  background-color: white;
+  /*#f2f2f2;*/
+  /*padding: 20px;*/
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  max-width: 800px;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group-biarbeidsgiver {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.form-group {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+
+.radio {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid black;
+  margin: 1em 0;
+  padding: 0;
+}
+
+legend#personalia {
+  color: #016FBA;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  /* padding-bottom: 10px; */
+  padding-top: 20px;
+  /* border-bottom: 1px solid black; */
+  width: 100px;
+  /* margin-bottom: 20px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+legend#tilleggsopplysninger {
+  color: #016FBA;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  /* padding-bottom: 10px; */
+  padding-top: 20px;
+  /* border-bottom: 1px solid black; */
+  /*width: 200px;*/
+  /* margin-bottom: 20px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  min-width: 250px;
+}
+
+label {
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+
+/*===================================*/
+/*Inputs*/
+/*===================================*/
+
+input[name=poststed], select {
+  pointer-events: none;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=radio], select {
+  padding: 12px 20px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit]:hover {
+  background-color: #8b0000;
+}
+
+/*===================================*/
+/*Button*/
+/*===================================*/
+
+button[type=submit] {
+  width: 100%;
+  background-color: #016FBA;
+  color: white;
+  padding: 14px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 
 
-div{
-	/*margin-top: 10px;*/
-}
+/*===================================*/
+/*Images*/
+/*===================================*/
 
-.form-group-biarbeidsgiver{
-	margin:0;
-	padding-bottom: 20px;
-}
-
-.form-group{
-	margin: 0;
-	padding-top: 0;
-	padding-bottom: 20px;
-
-}
-.radio{
-	margin: 0;
-	padding: 0;
-}
-
-img#personalialogo{
-/* Old
+img#personalialogo {
+  /* Old
 	width: 50px;
 	height: 50px;
 	float: right;
 	position: relative;
 	right: -8px;*/
-
-width: 50px;
-height: 50px;
-float: right;
-position: relative;
-left: 5px;
-}
-
-img#logo{
-	width: 300px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.content {
-	/*margin-top: 15px;*/
-}
-
-.contacts {
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 800px;
-}
-
-.c-error .c-validation{
-  background: #c51244 !important;
-  padding: 10px !important;
-  border-radius: 0 !important;
+  width: 50px;
+  height: 50px;
+  float: right;
   position: relative;
-  display: inline-block !important;
-  box-shadow: 1px 1px 1px #aaaaaa;
-  margin-top: 10px;
+  left: 5px;
 }
 
-.c-label:after{
-  color: #c51244 !important;
+img#logo {
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.c-error input, .c-error select, .c-error .c-choice-option{
-  background: #fff0f4;
-  color: #c51244;
+/*===================================*/
+/*Validation*/
+/*===================================*/
+
+
+
+.invalid {
+  /* border-color: red; */
+  border: 2px solid yellow;
+}
+input#fornavn {
+  border: 2px solid red;
 }
 
-.c-validation:before{
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #c51244;
-  position: absolute;
-  top: -10px;
+/* input:valid:focus{
+  border: 2px solid blue;
+  outline: none;
 }
 
+input:invalid::after{
+  border: 2px solid red;
+  outline: none;
+} */
 
-hr{
-display: block;
-height: 1px;
-border: 0;
-border-top: 2px solid black;
-margin: 1em 0;
-padding: 0;
-}
-
-legend#personalia {
-	color: #016FBA;
-	    text-align: center;
-	    font-size: 24px;
-	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	    font-style: normal;
-	    font-variant: normal;
-	    font-weight: 500;
-	    line-height: 26.4px;
-	    /* padding-bottom: 10px; */
-	    padding-top: 20px;
-	    /* border-bottom: 1px solid black; */
-	    width: 100px;
-	    /* margin-bottom: 20px; */
-	    margin-left: auto;
-	    margin-right: auto;
-
-}
-
-legend#tilleggsopplysninger {
-	color: #016FBA;
-	    text-align: center;
-	    font-size: 24px;
-	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	    font-style: normal;
-	    font-variant: normal;
-	    font-weight: 500;
-	    line-height: 26.4px;
-	    /* padding-bottom: 10px; */
-	    padding-top: 20px;
-	    /* border-bottom: 1px solid black; */
-	    /*width: 200px;*/
-	    /* margin-bottom: 20px; */
-	    margin-left: auto;
-	    margin-right: auto;
-
-}
 
 
 /* style all input elements with a required attribute */
+
 /*
 input:required {
 /*  box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85); */
-
 
 /**
  * style input elements that have a required
  * attribute and a focus state
  */
- /*
+
+/*
 input:required:invalid {
   border: 1px solid red;
   outline: none;
@@ -166,128 +267,8 @@ input:required:invalid {
  * style input elements that have a required
  * attribute and a hover state
  */
- /*
+
+/*
 input:required:hover {
   opacity: 1;
 }*/
-
-
-fieldset {
-	border: none;
-	margin: 0;
-	min-width: 250px;
-}
-
-label {
-	font-size: 16px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 20px;
-}
-
-.has-error .form-control {
-    border-color: #a94442;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
-
-.form {
-	border-radius: 5px;
-	background-color: white; /*#f2f2f2;*/
-	/*padding: 20px;*/
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-bottom:20px;
-	max-width: 800px;
-	min-width: 200px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-input[type=text], select {
-	width: 100%;
-	padding: 12px 20px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 0px;
-	margin-right: 0px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-input[type=email], select {
-	width: 100%;
-	padding: 12px 20px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 0px;
-	margin-right: 0px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-input[type=radio], select {
-	padding: 12px 20px;
-	margin-top: 10px;
-	margin-left: 0px;
-	margin-right: 10px;
-	display: inline-block;
-
-}
-
-
-input[type=number], select {
-	width: 100%;
-	padding: 12px 20px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 0px;
-	margin-right: 0px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-button[type=submit] {
-	width: 100%;
-	background-color: #016FBA;
-	color: white;
-	padding: 14px 20px;
-	margin: 15px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type=submit]:hover {
-	background-color: #8b0000;
-}
-
-button.update {
-	background-color: #b30000;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover,
-	.pagination>.active>span:hover, .pagination>.active>a:focus,
-	.pagination>.active>span:focus {
-	z-index: 3;
-	color: #fff;
-	cursor: default;
-	background-color: #b30000;
-	border-color: #b30000;
-}
