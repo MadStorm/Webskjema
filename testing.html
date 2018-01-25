@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 
   <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -188,13 +188,14 @@
             </div>
           </div>
 
+
           <!-- Select Basic -->
 
           <div class="form-group">
             <label class="col-md-4 control-label">Statsborgerskap</label>
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                <select name="state" class="form-control selectpicker">
+                <select name="statsborgerskap" class="form-control selectpicker">
               <!--<option value=" " >Velg ditt statsborgerskap</option>-->
               <option value="AF">Afghanistan</option>
             	<option value="AX">Åland Islands</option>
@@ -467,7 +468,7 @@
             <label class="col-md-4 control-label">Nærmeste pårørendes relasjon</label>
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                <select name="state" class="form-control selectpicker">
+                <select name="nok-relasjon" class="form-control selectpicker">
                       <!--<option value=" " >Velg din relasjon</option>-->
                       <option value="forelder">Forelder</option>
                       <option value="ektefelle">Ektefelle</option>
@@ -685,7 +686,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4">
-              <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button>
+              <button type="submit" class="btn btn-warning">Registrer <span class="glyphicon glyphicon-send"></span></button>
             </div>
           </div>
       </fieldset>
@@ -701,7 +702,6 @@
   <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
 
-  <script src="resources/js/index.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('#reg_form').bootstrapValidator({
@@ -739,8 +739,8 @@
                   message: 'Please supply your phone number'
                 },
                 phone: {
-                  country: 'US',
-                  message: 'Please supply a vaild phone number with area code'
+                  country: 'NO',
+                  message: 'Please supply a vaild phone number'
                 }
               }
             },
