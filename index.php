@@ -5,18 +5,17 @@
   <meta charset="ISO-8859-1">
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />
 
-  <!-- Test code
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="application/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="application/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" type="application/javascript"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="application/javascript"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="application/javascript"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" type="application/javascript"></script>
+-->
 
-
-<script>
+<script>/*
 window.onload = function test() {
 
   var input = document.getElementById("fornavn");
@@ -35,10 +34,11 @@ input.onfocus = function() {
     fornavn.innerHTML = "";
   }
 };
-}
+}*/
 </script>
+<script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
 
-
+</script>
   <script type="text/javascript" language="javascript">
 /*
   document.addEventListener("click", function() {
@@ -171,7 +171,10 @@ input.onfocus = function() {
         </div>
 
         <!--<legend>Personalia</legend>-->
-        <form method="post" action="index.php" name="personaliaform" id="personaliaform" onsubmit="return validateForm()">
+        <form method="post" class="form-horizontal" action="index.php" name="personaliaform" id="personaliaform" onsubmit="return validateForm()">
+          <div class="form-group">
+
+
           <label class="control-label" for="selectbasic">Kjønn</label>
           <select id="selectgender" name="gender" class="form-control" required>
             <option value="mann">Mann</option>
@@ -179,12 +182,19 @@ input.onfocus = function() {
             <option value="annet">Annet</option>
           </select>
 
+<div class="form-group has-error has-feedback">
 
-          <label for="form-fornavn">Fornavn</label>
+
+          <label class="col-xs-2 control-label">Fornavn</label>
+          <div class="col-xs-10">
+
+
           <input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" id="fornavn"
           name="fornavn" placeholder="Fornavn" required="true" autocomplete="off">
-          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-
+          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          <span class="help-block" aria-hidden="true"></span>
+            </div>
+</div>
           <label for="form-etternavn">Etternavn</label>
           <input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" id="etternavn" name="etternavn" placeholder="Etternavn" required="true" autocomplete="off">
           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -609,6 +619,7 @@ input.onfocus = function() {
           </div>
         </div>
         <button id="submitForm" name="submit" type="submit" value="submit"> Registrer</button>
+        </div>
         </form>
       </fieldset>
     </div>
