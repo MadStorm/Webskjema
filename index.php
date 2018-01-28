@@ -846,16 +846,6 @@
                 }
               }
             },
-            poststed: {
-              validators: {
-                stringLength: {
-                  min: 0,
-                },
-                notEmpty: {
-                  message: 'Ugyldig postnummer'
-                }
-              }
-            },
             kommune: {
               validators: {
                 stringLength: {
@@ -969,6 +959,8 @@
 
         });
     });
+
+
   </script>
 </body>
 
