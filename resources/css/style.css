@@ -7,6 +7,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.help-block {
+  /*display: none !important;*/
+}
+
+
 
 .content {
   /*margin-top: 15px;*/
@@ -348,7 +353,7 @@ form input::-webkit-validation-bubble-message,
 form select::-webkit-validation-bubble-message,
 form textarea::-webkit-validation-bubble-message {
     display:none;
-} 
+}
 
 
 /*

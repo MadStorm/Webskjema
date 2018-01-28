@@ -157,7 +157,8 @@
             <label class="col-md-4 control-label">Fornavn</label>
             <div class="col-md-6  inputGroupContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" id="fornavn" name="fornavn" placeholder="Fornavn" required="true" autocomplete="off">
+                <input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" id="fornavn"
+                name="fornavn" placeholder="Fornavn" required="true" autocomplete="off">
               </div>
             </div>
           </div>
@@ -858,7 +859,7 @@
             kommune: {
               validators: {
                 stringLength: {
-                  min: 2,
+                  min: 0,
                 },
                 notEmpty: {
                   message: 'Vennligst fyll ut kommunen din'
@@ -889,7 +890,7 @@
             bankkontonummer: {
               validators: {
                 stringLength: {
-                  min: 2,
+                  min: 0,
                 },
                 notEmpty: {
                   message: 'Vennligst fyll ut bankkontonummeret ditt, 11 siffer'
@@ -906,7 +907,7 @@
             npnnavn: {
               validators: {
                 stringLength: {
-                  min: 2,
+                  min: 0,
                 },
                 notEmpty: {
                   message: 'Vennligst fyll ut navnet til nærmeste pårørende'
@@ -969,16 +970,6 @@
         });
     });
   </script>
-<script>
-
-document.addEventListener('invalid', (function(){
-    return function(e) {
-      //prevent the browser from showing default error bubble / hint
-      e.preventDefault();
-      // optionally fire off some custom validation handler
-      // myValidation();
-    };
-})(), true);</script>
 </body>
 
 </html>
