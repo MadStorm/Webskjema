@@ -48,7 +48,7 @@
 
    $dataTag = $xml->createElement("data");
 
-   $genderTag = $xml->createElement("gender",$_REQUEST['gender']);
+   $kjonnTag = $xml->createElement("kjonn",$_REQUEST['kjonn']);
    $fornavnTag = $xml->createElement("fornavn",$_REQUEST['fornavn']);
    $etternavnTag = $xml->createElement("etternavn",$_REQUEST['etternavn']);
    $personnummerTag = $xml->createElement("personnummer",$_REQUEST['personnummer']);
@@ -76,7 +76,7 @@
 
 
 
-   $dataTag->appendChild($genderTag);
+   $dataTag->appendChild($kjonnTag);
    $dataTag->appendChild($fornavnTag);
    $dataTag->appendChild($etternavnTag);
    $dataTag->appendChild($personnummerTag);
@@ -141,7 +141,8 @@
             <label class="col-md-4 control-label">Kjønn</label>
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                <select name="gender" class="form-control selectpicker">
+                <select name="kjonn" class="form-control selectpicker" required>
+                    <option value="" disabled selected>Velg ditt kjønn</option>
                     <option value="mann">Mann</option>
                     <option value="kvinne">Kvinne</option>
                     <option value="annet">Annet</option>
@@ -212,7 +213,7 @@
             <label class="col-md-4 control-label">Poststed</label>
             <div class="col-md-6  inputGroupContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                <input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="poststed" placeholder="Poststed" disabled="disabled" autocomplete="off">
+                <input type="text" pattern="^[a-zA-ZÆØÅæøå ]+$" class="form-control" name="poststed" placeholder="Poststed" autocomplete="off" readonly />
               </div>
             </div>
           </div>
@@ -268,8 +269,8 @@
             <label class="col-md-4 control-label">Statsborgerskap</label>
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                <select name="statsborgerskap" class="form-control selectpicker">
-              <!--<option value=" " >Velg ditt statsborgerskap</option>-->
+                <select name="statsborgerskap" class="form-control selectpicker" required>
+              <!--<option value="" >Velg ditt statsborgerskap</option>-->
               <option value="AF">Afghanistan</option>
             	<option value="AX">Åland Islands</option>
             	<option value="AL">Albania</option>
@@ -541,12 +542,12 @@
             <label class="col-md-4 control-label">Nærmeste pårørendes relasjon</label>
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                <select name="npnrelasjon" class="form-control selectpicker">
-                      <!--<option value=" " >Velg din relasjon</option>-->
+                <select name="npnrelasjon" class="form-control selectpicker" required>
+                      <option value="" disabled selected>Velg din relasjon</option>
                       <option value="forelder">Forelder</option>
                       <option value="ektefelle">Ektefelle</option>
                       <option value="samboer">Samboer</option>
-                      <option value="kjareste">Kjæreste</option>
+                      <option value="kjaereste">Kjæreste</option>
                       <option value="sosken">Søsken</option>
                       <option value="annet">Annet</option>
                     </select>
@@ -567,7 +568,7 @@
 
 
           <!-- Radio input-->
-          <div class="radios">
+          <div class="form-group">
             <label class="col-md-4 control-label">Er Canon biarbeidsgiver?</label>
             <div class="col-md-6  inputGroupContainer">
               <div class="input-group">
@@ -595,7 +596,7 @@
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                 <select name="sko" class="form-control selectpicker">
-                      <!--<option value=" " >Velg din relasjon</option>-->
+                      <option value="" disabled selected>Velg din skostørrelse</option>
                       <option value="34">34</option>
             				  <option value="35">35</option>
             				  <option value="36">36</option>
@@ -624,7 +625,7 @@
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                 <select name="tskjorte" class="form-control selectpicker">
-                      <!--<option value=" " >Velg din relasjon</option>-->
+                      <option value="" disabled selected>Velg din t-skjortestørrelse</option>
                       <option value="xs">XS</option>
               			  <option value="s">S</option>
               			  <option value="m">M</option>
@@ -643,7 +644,7 @@
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                 <select name="genser" class="form-control selectpicker">
-                      <!--<option value=" " >Velg din relasjon</option>-->
+                      <option value="" disabled selected>Velg din genserstørrelse</option>
                       <option value="xs">XS</option>
                       <option value="s">S</option>
                       <option value="m">M</option>
@@ -662,7 +663,7 @@
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                 <select name="jakke" class="form-control selectpicker">
-                      <!--<option value=" " >Velg din relasjon</option>-->
+                      <option value="" disabled selected>Velg din jakkestørrelse</option>
                       <option value="xs">XS</option>
                       <option value="s">S</option>
                       <option value="m">M</option>
@@ -681,7 +682,7 @@
             <div class="col-md-6 selectContainer">
               <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                 <select name="bukse" class="form-control selectpicker">
-                      <!--<option value=" " >Velg din relasjon</option>-->
+                      <option value="" disabled selected>Velg din buksestørrelse</option>
                       <option value="xs">XS</option>
                       <option value="s">S</option>
                       <option value="m">M</option>
@@ -786,6 +787,13 @@
             validating: 'glyphicon glyphicon-refresh'
           },
           fields: {
+            kjonn: {
+              validators: {
+                notEmpty: {
+                  message: 'Vennligst velg ditt kjønn'
+                }
+              }
+            },
             fornavn: {
               validators: {
                 stringLength: {
@@ -834,6 +842,16 @@
                 },
                 notEmpty: {
                   message: 'Vennligst fyll ut postnummeret ditt, 4 siffer'
+                }
+              }
+            },
+            poststed: {
+              validators: {
+                stringLength: {
+                  min: 0,
+                },
+                notEmpty: {
+                  message: 'Ugyldig postnummer'
                 }
               }
             },
@@ -951,7 +969,16 @@
         });
     });
   </script>
+<script>
 
+document.addEventListener('invalid', (function(){
+    return function(e) {
+      //prevent the browser from showing default error bubble / hint
+      e.preventDefault();
+      // optionally fire off some custom validation handler
+      // myValidation();
+    };
+})(), true);</script>
 </body>
 
 </html>
