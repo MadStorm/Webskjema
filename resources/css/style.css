@@ -164,11 +164,25 @@ label {
   margin-bottom: 15px;
 }
 
-.
+select:valid{
+  color: black;
+}
+
+select:invalid{
+  color: black;/*#9a9a9a;*/
+}
+
+option{
+  color: black;
+}
+
+option:active{
+  color: black;
+}
 
 /*
-input[name=poststed] {
-  /*pointer-events: none;
+input[name=poststed]:active:focus::selection {
+  pointer-events: none;
 }
 /*
 input[type=text], select {
@@ -329,6 +343,12 @@ img#logo {
 #success_message {
   display: none;
 }
+
+form input::-webkit-validation-bubble-message,
+form select::-webkit-validation-bubble-message,
+form textarea::-webkit-validation-bubble-message {
+    display:none;
+} 
 
 
 /*
